@@ -28,12 +28,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.png)
+![](./E-commerce-Product-Page.png)
 
 ### Links
 
 - Solution URL: [https://www.frontendmentor.io/solutions/ecommerce-product-page-rktZh2CEc](https://www.frontendmentor.io/solutions/ecommerce-product-page-rktZh2CEc)
-- Live Site URL: [https://ma-e-commerce-product-page.netlify.app/](https://ma-e-commerce-product-page.netlify.app/)
+- Live Site URL: [https://gillette-ecommerce-product-page.netlify.app/](https://gillette-ecommerce-product-page.netlify.app/)
 
 ## My process
 
