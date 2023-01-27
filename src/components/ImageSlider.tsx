@@ -54,7 +54,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
 		<>
 			<div>
 				<div style={{ position: "relative" }}>
-					<MobileButtonNext src={IconPrev} onClick={handleNextClick} />
+					<MobileButtonNext src={IconPrev} onClick={handlePrevClick} />
 
 					<CurrentImage
 						src={currentImage}
@@ -63,7 +63,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
 						className={`current-image ${currentIndex === 0 ? "slide-in" : ""}`}
 					/>
 
-					<MobileButtonPrevious src={IconNext} onClick={handlePrevClick} />
+					<MobileButtonPrevious src={IconNext} onClick={handleNextClick} />
 				</div>
 				<div>
 					{images.map((image, i) => (
@@ -84,7 +84,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
 				<CarouselOverlay>
 					<CarouselContent>
 						<div>
-							<CarouselButtonNext src={IconPrev} onClick={handleNextClick} />
+							<CarouselButtonNext src={IconPrev} onClick={handlePrevClick} />
 							<CurrentImage
 								src={currentImage}
 								alt="Current Image"
@@ -94,7 +94,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
 
 							<CarouselButtonPrevious
 								src={IconNext}
-								onClick={handlePrevClick}
+								onClick={handleNextClick}
 							/>
 							<CarouselClose onClick={handleCloseClick}>X</CarouselClose>
 						</div>
