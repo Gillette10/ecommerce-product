@@ -106,7 +106,7 @@ const Modal: React.FC<Props> = () => {
 					onMouseEnter={handleMouseEnter}
 					// onMouseLeave={handleMouseLeave}
 				/>
-				<Badge>{cartItems}</Badge>
+				{cartItems === 0 ? "" : <Badge>{cartItems}</Badge>}
 			</div>
 
 			{isOpen &&
