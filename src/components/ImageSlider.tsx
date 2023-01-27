@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import {
-	IoIosArrowDropleftCircle,
-	IoIosArrowDroprightCircle,
-} from "react-icons/io";
+import IconNext from "../assets/icon-next.svg";
+import IconPrev from "../assets/icon-previous.svg";
 import {
 	CarouselButtonNext,
 	CarouselButtonPrevious,
@@ -16,11 +14,11 @@ import {
 } from "../styles/ImageSlider.style";
 
 interface ImageSliderProps {
-	img: string[];
+	images: string[];
 }
 
-const ImageSlider: React.FC<ImageSliderProps> = ({ img }) => {
-	const [currentImage, setCurrentImage] = useState(img[0]);
+const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
+	const [currentImage, setCurrentImage] = useState(images[0]);
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [showCarousel, setShowCarousel] = useState(false);
 
@@ -34,20 +32,20 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ img }) => {
 
 	const handlePrevClick = () => {
 		if (currentIndex === 0) {
-			setCurrentImage(img[img.length - 1]);
-			setCurrentIndex(img.length - 1);
+			setCurrentImage(images[images.length - 1]);
+			setCurrentIndex(images.length - 1);
 		} else {
-			setCurrentImage(img[currentIndex - 1]);
+			setCurrentImage(images[currentIndex - 1]);
 			setCurrentIndex(currentIndex - 1);
 		}
 	};
 
 	const handleNextClick = () => {
-		if (currentIndex === img.length - 1) {
-			setCurrentImage(img[0]);
+		if (currentIndex === images.length - 1) {
+			setCurrentImage(images[0]);
 			setCurrentIndex(0);
 		} else {
-			setCurrentImage(img[currentIndex + 1]);
+			setCurrentImage(images[currentIndex + 1]);
 			setCurrentIndex(currentIndex + 1);
 		}
 	};
@@ -56,9 +54,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ img }) => {
 		<>
 			<div>
 				<div style={{ position: "relative" }}>
-					<MobileButtonNext onClick={handlePrevClick}>
-						<IoIosArrowDropleftCircle color="white" size={50} />
-					</MobileButtonNext>
+					<MobileButtonNext src={IconPrev} onClick={handleNextClick} />
 
 					<CurrentImage
 						src={currentImage}
@@ -66,12 +62,11 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ img }) => {
 						onClick={handleMainImageClick}
 						className={`current-image ${currentIndex === 0 ? "slide-in" : ""}`}
 					/>
-					<MobileButtonPrevious onClick={handleNextClick}>
-						<IoIosArrowDroprightCircle color="white" size={50} />
-					</MobileButtonPrevious>
+
+					<MobileButtonPrevious src={IconNext} onClick={handlePrevClick} />
 				</div>
 				<div>
-					{img.map((image, i) => (
+					{images.map((image, i) => (
 						<Thumbnail
 							key={i}
 							src={image}
@@ -88,24 +83,24 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ img }) => {
 			{showCarousel && (
 				<CarouselOverlay>
 					<CarouselContent>
-						<CarouselButtonNext onClick={handlePrevClick}>
-							<IoIosArrowDropleftCircle color="white" size={50} />
-						</CarouselButtonNext>
-						<CurrentImage
-							src={currentImage}
-							alt="Current Image"
-							onClick={handleMainImageClick}
-							style={{ width: "350px" }}
-							className={`current-image ${
-								currentIndex === 0 ? "slide-in" : ""
-							}`}
-						/>
-						<CarouselButtonPrevious onClick={handleNextClick}>
-							<IoIosArrowDroprightCircle color="white" size={50} />
-						</CarouselButtonPrevious>
-						<CarouselClose onClick={handleCloseClick}>X</CarouselClose>
 						<div>
-							{img.map((image, i) => (
+							<CarouselButtonNext src={IconPrev} onClick={handleNextClick} />
+							<CurrentImage
+								src={currentImage}
+								alt="Current Image"
+								onClick={handleMainImageClick}
+								style={{ width: "350px" }}
+							/>
+
+							<CarouselButtonPrevious
+								src={IconNext}
+								onClick={handlePrevClick}
+							/>
+							<CarouselClose onClick={handleCloseClick}>X</CarouselClose>
+						</div>
+
+						<div>
+							{images.map((image, i) => (
 								<Thumbnail
 									key={i}
 									src={image}

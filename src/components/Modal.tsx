@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import { Badge, CartImg } from "../styles/NavBar.style";
-import Cart from "../assets/icons/icon-cart.svg";
+import Cart from "../assets/icon-cart.svg";
 import { useCart } from "../context/ShoppingCartContext";
 import {
 	ModalButton,
@@ -12,8 +12,7 @@ import {
 	ModalTitle,
 	ModalTotalAmount,
 } from "../styles/Modal.style";
-import { Thumbnail } from "../styles/ImageSlider.style";
-import Image from "../assets/imgs/image-product-2.jpg";
+import Image from "../assets/image-product-2.jpg";
 import { formatCurrency } from "../utilities/formatCurrency";
 import { AiFillDelete } from "react-icons/ai";
 

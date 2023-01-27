@@ -1,11 +1,8 @@
-import myLogo from "../assets/icons/logo.svg";
-import Avatar from "../assets/imgs/image-avatar.png";
-import Cart from "../assets/icons/icon-cart.svg";
+import myLogo from "../assets/logo.svg";
+import Avatar from "../assets/image-avatar.png";
 import {
 	AvatarFlexContainer,
 	AvatarImg,
-	Badge,
-	CartImg,
 	NavContainer,
 	NavFlexContainer,
 	StyledImg,

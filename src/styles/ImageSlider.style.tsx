@@ -58,6 +58,7 @@ export const CurrentImage = styled.img`
 		border-radius: 0;
 	}
 `;
+
 export const CarouselOverlay = styled.div`
 	${slideTransition}
 	position: absolute;
@@ -82,8 +83,8 @@ export const CarouselContent = styled.div`
 	height: 80%; */
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+	/* align-items: center;
+	justify-content: center; */
 	z-index: 2;
 
 	@media (max-width: 540px) {
@@ -108,9 +109,12 @@ export const CarouselClose = styled.div`
 		display: none;
 	}
 `;
-export const CarouselButtonPrevious = styled.div`
+export const CarouselButtonPrevious = styled.img`
 	${slideTransition}
 
+	background-color: white;
+	border-radius: 50%;
+	padding: 0.8rem 1rem;
 	position: absolute;
 	top: 35%;
 	right: -6%;

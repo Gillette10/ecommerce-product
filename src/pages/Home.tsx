@@ -1,14 +1,12 @@
 import Content from "../components/Content";
 import ImageSlider from "../components/ImageSlider";
-import Images from "../data/items.json";
 import { HomeContainer } from "../styles/ImageSlider.style";
+import { productImages } from "../ProductImages";
 
 const Home = () => {
 	return (
 		<HomeContainer>
-			{Images.map((image) => {
-				return <ImageSlider {...image} key={image.id} />;
-			})}
+			<ImageSlider images={productImages} />
 			<Content />
 		</HomeContainer>
 	);

@@ -75,7 +75,7 @@ export const AvatarFlexContainer = styled.div`
 	justify-content: center;
 	align-items: center;
 	gap: 2rem;
-	margin-right: 2rem;
+	margin: 0 2rem;
 
 	@media (max-width: 540px) {
 		gap: 1rem;
@@ -107,7 +107,6 @@ export const CartImg = styled.img`
 
 export const StyledImg = styled.img`
 	@media (max-width: 540px) {
-		width: 100px;
 	}
 `;
 
