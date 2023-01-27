@@ -99,7 +99,13 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
 							<CarouselClose onClick={handleCloseClick}>X</CarouselClose>
 						</div>
 
-						<div>
+						<div
+							style={{
+								display: "flex",
+								justifyContent: "center",
+								marginLeft: "1.8rem",
+							}}
+						>
 							{images.map((image, i) => (
 								<Thumbnail
 									key={i}
