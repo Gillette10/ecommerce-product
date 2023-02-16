@@ -43,8 +43,11 @@ const IconWrapper = styled.div`
 `;
 
 const Modal: React.FC<Props> = () => {
-	const [isOpen, setIsOpen] = useState(false);
+	//USECONTEXT
 	const { cartItems, removeFromCart } = useCart();
+
+	//STATES
+	const [isOpen, setIsOpen] = useState(false);
 	const [isMobile, setIsMobile] = useState(false);
 	const modalRef = useRef<HTMLDivElement>(null);
 
